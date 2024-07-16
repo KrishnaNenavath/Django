@@ -1,0 +1,45 @@
+  {% include 'students/header.html' %}
+
+  <section>
+    <h1 class="text-center my-4">Add New Students</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card bg-light">
+            <div class="card-boady">
+              <form class="row g-3" action="/add-student/" method="POST">
+                {% csrf_token %}
+                 <div class="col-md-6">
+                  <label for="roll" class="form-label">Roll No.</label>
+                  <input type="text" name="roll" placeholder="Enter Roll Number..." class="form-control" id="roll" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Student Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                 <div class="col-md-6">
+                  <label for="Email" class="form-label">Email</label>
+                  <input type="email" name="email" placeholder="Enter your email" class="form-control" id="Email">
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="number" name="phone" placeholder="Enter your phone number" maxlength="10" class="form-control" id="phone">
+                </div>
+                <div class="col-12">
+                  <label for="address" class="form-label">Address</label>
+                  <textarea name="address" id="address" class="form-control" rows="5"></textarea>
+                
+                </div>
+               
+                <div class="col-6 container my-2 text-center">
+                  <button type="submit" class="btn btn-primary">Add Student</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+     {% include 'students/fotter.html' %}
